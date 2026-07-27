@@ -2,12 +2,12 @@ package lk.ijse.ad.smart_parking_management_system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
-public class SmartParkingManagementSystemApplication {
-
+@EnableEurekaServer
+public class EurekaServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SmartParkingManagementSystemApplication.class, args);
+        SpringApplication.run(EurekaServerApplication.class, args);
     }
-
 }
