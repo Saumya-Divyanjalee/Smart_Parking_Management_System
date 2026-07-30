@@ -11,16 +11,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ParkingSpace {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String location;
     private String zone;
-    private String status; // AVAILABLE, OCCUPIED, RESERVED
+    private String status;
     private String ownerId;
+    private Double basePrice;
 
     @Version
-    private Long version; // optimistic locking සඳහා (Step 9 එකට useful)
+    private Long version;
 }
