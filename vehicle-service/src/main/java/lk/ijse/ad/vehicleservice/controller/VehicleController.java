@@ -2,6 +2,7 @@ package lk.ijse.ad.vehicleservice.controller;
 
 import lk.ijse.ad.vehicleservice.entity.Vehicle;
 import lk.ijse.ad.vehicleservice.repository.VehicleRepository;
+import lk.ijse.ad.vehicleservice.service.UserVerificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -49,5 +50,13 @@ public class VehicleController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         repository.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @Autowired
+    private UserVerificationService userVerificationService;
+
+    @GetMapping("/verify-user/{userId}")
+    public ResponseEntity<String> verifyUser(@PathVariable String userId) {
+        return ResponseEntity.ok(userVerificationService.verifyUser(userId));
     }
 }
