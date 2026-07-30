@@ -23,3 +23,6 @@ eureka:
 payhere:
   merchant-id: 1234720
   merchant-secret: MjMwMDQ1NTg1OTI4NTY4NDc0NjgyODY4Njk1MDkwMTEwMTgyOTM0NA==
+  return-url: https://maci-steelless-berniece.ngrok-free.dev/api/payment/success
+  cancel-url: https://maci-steelless-berniece.ngrok-free.dev/api/payment/cancel
+  notify-url: https://maci-steelless-berniece.ngrok-free.dev/api/payment/notify
