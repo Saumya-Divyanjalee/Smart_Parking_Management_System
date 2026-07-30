@@ -14,18 +14,26 @@ spring:
           uri: lb://PARKING-SPACE-SERVICE
           predicates:
             - Path=/api/parking/**
+          filters:
+            - JwtAuthFilter
         - id: vehicle-service
           uri: lb://VEHICLE-SERVICE
           predicates:
             - Path=/api/vehicle/**
+          filters:
+            - JwtAuthFilter
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
             - Path=/api/user/**
+          filters:
+            - JwtAuthFilter
         - id: payment-service
           uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/api/payment/**
+          filters:
+            - JwtAuthFilter
 
 eureka:
   client:
