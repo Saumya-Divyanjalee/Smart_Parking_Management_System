@@ -43,4 +43,19 @@ public class ParkingSpaceController {
         repository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("/{id}/reserve")
+    public ResponseEntity<?> reserve(@PathVariable Long id) {
+        try {
+            ParkingSpace space = repository.findById(id).orElseThrow();
+            if (!space.getStatus().equals("AVAILABLE")) {
+                return ResponseEntity.status(409).body("Space is not available");
+            }
+            space.setStatus("RESERVED");
+            repository.save(space);  //
+            return ResponseEntity.ok(space);
+        } catch (org.springframework.orm.ObjectOptimisticLockingFailureException e) {
+            return ResponseEntity.status(409).body("Reservation conflict — space was just reserved by someone else. Please try again.");
+        }
+    }
 }
