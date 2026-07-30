@@ -15,6 +15,9 @@ public class VehicleController {
     @Autowired
     private VehicleRepository repository;
 
+    @Autowired
+    private UserVerificationService userVerificationService;
+
     @PostMapping
     public ResponseEntity<Vehicle> register(@RequestBody Vehicle vehicle) {
         return ResponseEntity.ok(repository.save(vehicle));
@@ -27,9 +30,7 @@ public class VehicleController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Vehicle> getById(@PathVariable Long id) {
-        return repository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        return repository.findById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}/entry")
@@ -46,17 +47,14 @@ public class VehicleController {
         return ResponseEntity.ok(repository.save(v));
     }
 
+    @GetMapping("/verify-user/{userId}")
+    public ResponseEntity<String> verifyUser(@PathVariable String userId) {
+        return ResponseEntity.ok(userVerificationService.verifyUser(userId));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         repository.deleteById(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @Autowired
-    private UserVerificationService userVerificationService;
-
-    @GetMapping("/verify-user/{userId}")
-    public ResponseEntity<String> verifyUser(@PathVariable String userId) {
-        return ResponseEntity.ok(userVerificationService.verifyUser(userId));
     }
 }
