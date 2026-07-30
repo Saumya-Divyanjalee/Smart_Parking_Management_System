@@ -1,4 +1,4 @@
-package lk.ijse.ad.paymentservice.util;
+package lk.ijse.ad.paymentservice.utill;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

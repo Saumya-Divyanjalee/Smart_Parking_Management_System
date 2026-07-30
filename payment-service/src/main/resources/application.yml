@@ -21,5 +21,5 @@ eureka:
     prefer-ip-address: true
 
 payhere:
-  merchant-id: YOUR_MERCHANT_ID
-  merchant-secret: YOUR_MERCHANT_SECRET
+  merchant-id: 1234720
+  merchant-secret: MjMwMDQ1NTg1OTI4NTY4NDc0NjgyODY4Njk1MDkwMTEwMTgyOTM0NA==
