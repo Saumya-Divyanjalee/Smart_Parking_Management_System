@@ -88,8 +88,7 @@ Once the corresponding service is running, its interactive API docs are availabl
 ## Resources
 
 - [Postman Collection](./postman_collection.json)
-- ![Eureka Dashboard](<img width="1917" height="1078" alt="Screenshot 2026-08-01 135033" src="https://github.com/user-attachments/assets/db430696-c8f6-41fe-a10f-62c1180cf0f4" />
- )
+- ![Eureka Dashboard](<img width="1917" height="1078" alt="Screenshot 2026-08-01 135033" src="https://github.com/user-attachments/assets/db430696-c8f6-41fe-a10f-62c1180cf0f4" />)
 
 ## Testing
 
