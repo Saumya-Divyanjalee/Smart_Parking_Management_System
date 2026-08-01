@@ -1,0 +1,3 @@
+info:
+  service: parking-space-service
+  description: Config managed centrally via Config Server
